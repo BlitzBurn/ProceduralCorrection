@@ -15,13 +15,14 @@ public class MoveCharacter : MonoBehaviour
     {
         characterPosition = transform.position;
 
-        positionY=transform.position.y;
-        positionZ = transform.position.z;
+       // positionY=transform.position.y;
+       // positionZ = transform.position.z;
     }
     //testar
     void Update()
     {
-        characterPosition = new Vector3(transform.position.x +movementSpeed , positionY, 0);
-        transform.position = characterPosition;
+        characterPosition.x =transform.position.x +movementSpeed;
+       transform.position = characterPosition;
+       
     }
 }
