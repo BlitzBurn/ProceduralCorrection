@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveBlock : MonoBehaviour
 {
-    private Transform ThisBlock;
+    public Transform ThisBlock;
     private Transform AIcharacter;
 
     private float distanceFromCharacter;
@@ -12,14 +12,27 @@ public class MoveBlock : MonoBehaviour
     [Range(10f, 90f)]
     public float maxDistance;
 
+    [Range(5, 100)]
+    public int numberOfBlocks;
+
     private float posX;
+
+    private float newY;
 
 
     private void Awake()
     {
         ThisBlock = this.transform;
         AIcharacter = GameObject.FindGameObjectWithTag("AI").transform;
+
+        for(float i=0; i<numberOfBlocks; i++)
+        {
+            Instantiate(ThisBlock, new Vector3(i,newY, 0), Quaternion.identity);
+        }
+
     }
+
+
 
     void Update()
     {
@@ -27,9 +40,13 @@ public class MoveBlock : MonoBehaviour
 
         distanceFromCharacter = Vector3.Distance(ThisBlock.transform.position, AIcharacter.transform.position);
 
+        newY = Random.Range(0, 6);
+
         if (distanceFromCharacter >= maxDistance)
         {
-            transform.position.x = posX + 50;
+            ThisBlock.transform.position = new Vector3(posX + 50, newY, 0);
+                
+               
         }
 
 
