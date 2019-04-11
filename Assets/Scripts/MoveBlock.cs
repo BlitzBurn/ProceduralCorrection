@@ -24,11 +24,7 @@ public class MoveBlock : MonoBehaviour
      void start()
     {
 
-        ThisBlock = GameObject.FindGameObjectWithTag("BlockTag").transform;
-            
-            //this.transform;
-
-        AIcharacter = GameObject.FindGameObjectWithTag("AI").transform;
+       
     }
 
 
@@ -37,18 +33,22 @@ public class MoveBlock : MonoBehaviour
     {
         posX = transform.position.x;
 
-        distanceFromCharacter = Vector3.Distance(ThisBlock.position, AIcharacter.transform.position);
+        ThisBlock = GameObject.FindGameObjectWithTag("BlockTag").transform;
+
+        AIcharacter = GameObject.FindGameObjectWithTag("AI").transform;
+
+        distanceFromCharacter = Vector3.Distance(AIcharacter.transform.position, ThisBlock.position);
 
         newY = Random.Range(0, 6);
 
         Debug.Log(distanceFromCharacter);
 
-        //if (distanceFromCharacter <= maxDistance)
-        //{
-        //    ThisBlock.transform.position = new Vector3(posX + 50, newY, 0);
-        //    Debug.Log(distanceFromCharacter);
+        if (distanceFromCharacter >= maxDistance)
+        {
+            ThisBlock.transform.position = new Vector3(posX + 50, newY, 0);
+            Debug.Log(distanceFromCharacter);
                
-        //}
+        }
 
 
     }
