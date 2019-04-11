@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3704334637077463596}
   - component: {fileID: 3704334637077463595}
   - component: {fileID: 3704334637077463599}
+  - component: {fileID: 6488543860521374900}
   m_Layer: 0
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: BlockTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,3 +109,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6488543860521374900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3704334637077463594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f52bdd241980554496a83a6958f518f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisBlock: {fileID: 3704334637077463598}
+  AIcharacter: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810,
+    type: 3}
+  maxDistance: 51

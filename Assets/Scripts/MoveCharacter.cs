@@ -13,15 +13,18 @@ public class MoveCharacter : MonoBehaviour
 
     void Start()
     {
+
+        
+
         characterPosition = transform.position;
 
        // positionY=transform.position.y;
        // positionZ = transform.position.z;
     }
-    //testar
+ 
     void Update()
     {
-        characterPosition.x =transform.position.x +movementSpeed;
+       characterPosition.x =transform.position.x +movementSpeed;
        transform.position = characterPosition;
        
     }
