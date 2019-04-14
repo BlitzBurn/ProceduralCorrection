@@ -5,14 +5,15 @@ using UnityEngine;
 public class MoveBlock : MonoBehaviour
 {
 
+    public GameObject DaBlock;
+    public GameObject DudeGuy;
+
     public Transform ThisBlock;
-
-
     public Transform AIcharacter;
 
     private float distanceFromCharacter;
 
-    [Range(10f, 90f)]
+    [Range(-25f, 0f)]
     public float maxDistance;
 
 
@@ -21,9 +22,13 @@ public class MoveBlock : MonoBehaviour
     private float newY;
 
 
-     void start()
+     void Start()
     {
 
+        ThisBlock = GameObject.FindGameObjectWithTag("BlockTag").transform;
+
+        AIcharacter = GameObject.FindGameObjectWithTag("AI").transform;
+        
        
     }
 
@@ -33,20 +38,21 @@ public class MoveBlock : MonoBehaviour
     {
         posX = transform.position.x;
 
-        ThisBlock = GameObject.FindGameObjectWithTag("BlockTag").transform;
+      
 
-        AIcharacter = GameObject.FindGameObjectWithTag("AI").transform;
+        distanceFromCharacter =ThisBlock.position.x-AIcharacter.position.x;
 
-        distanceFromCharacter = Vector3.Distance(AIcharacter.transform.position, ThisBlock.position);
+        //distanceFromCharacter = Vector3.Distance(AIcharacter.transform.position,DaBlock.position);
 
         newY = Random.Range(0, 6);
 
-        Debug.Log(distanceFromCharacter);
+        //Debug.Log(distanceFromCharacter);
 
-        if (distanceFromCharacter >= maxDistance)
+        if (distanceFromCharacter <= maxDistance)
         {
-            ThisBlock.transform.position = new Vector3(posX + 50, newY, 0);
-            Debug.Log(distanceFromCharacter);
+            DaBlock.transform.position = new Vector3(posX + 50, newY, 0);
+            //Debug.Log(distanceFromCharacter);
+
                
         }
 

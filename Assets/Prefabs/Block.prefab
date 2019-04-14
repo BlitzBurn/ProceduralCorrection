@@ -88,7 +88,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3704334637077463594}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -121,7 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f52bdd241980554496a83a6958f518f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DaBlock: {fileID: 0}
+  DudeGuy: {fileID: 0}
   ThisBlock: {fileID: 3704334637077463598}
   AIcharacter: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810,
     type: 3}
-  maxDistance: 51
+  maxDistance: -22
