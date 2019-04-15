@@ -12,12 +12,12 @@ public class MoveCharacter : MonoBehaviour
 
     public Transform self;
 
-    private Rigidbody rd;
+    private Rigidbody characterRigidBody;
 
     void Start()
     {
 
-        rd = GetComponent<Rigidbody>();
+        characterRigidBody= GetComponent<Rigidbody>();
 
         characterPosition = transform.position;
 
@@ -25,19 +25,19 @@ public class MoveCharacter : MonoBehaviour
        // positionZ = transform.position.z;
     }
 
-    void OncollisionEnter(Collision collision)
-    {
-        Debug.Log("BEEPA BEEP");
-    }
+    
 
     void Update()
     {
+        characterRigidBody.velocity = new Vector3(movementSpeed, characterRigidBody.velocity.y, 0);
+
+        /*
         characterPosition.x =transform.position.x +movementSpeed;
 
        // rd.AddForce(self.right* movementSpeed);
 
         transform.position = characterPosition;
-  
+      */
        
         
 

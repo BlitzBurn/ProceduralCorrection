@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpScript : MonoBehaviour
 {
-    [Range(0.01f, 10f)]
+    [Range(0.01f, 1f)]
     public float RaycastLengthDown;
 
     [Range(0.01f, 5f)]
@@ -23,23 +23,28 @@ public class JumpScript : MonoBehaviour
     private float time;
     private bool airControl;
 
-    private bool groundContact = false;
+    private bool groundContact;
+    public LayerMask groundLayer;
+    private Collider charCollider;
 
     void Start()
     {
         rd = GetComponent<Rigidbody>();
-        time = airTimer + 1;
+        charCollider = GetComponent<BoxCollider>();
     }
 
-    void JumpyJump()
-    {
-      //  rd.AddForce(self.up * jumpForce);
-    }
+  
 
     void Update()
-    {
-        time += Time.deltaTime;
-
+    {      
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out downwardHit, RaycastLengthDown))
+        {
+            groundContact = true;
+        }
+        else
+        {
+            groundContact=false;
+        }
 
         Vector3 right = transform.TransformDirection(Vector3.right) * RaycastLengthForward;
         Debug.DrawRay(transform.position, right, Color.red);
@@ -47,17 +52,17 @@ public class JumpScript : MonoBehaviour
         Vector3 down = transform.InverseTransformDirection(Vector3.down) * RaycastLengthDown;
         Debug.DrawRay(transform.position, down, Color.red);
 
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out forwardHit, RaycastLengthForward) )
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out forwardHit, RaycastLengthForward) && groundContact == true )
         {
-            rd.AddForce(self.up*jumpForce);
-            Debug.Log("does it work");
-        }
+            rd.velocity = new Vector3(rd.velocity.x, jumpForce, 0);
 
+        }
+/*
        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out downwardHit, RaycastLengthDown) && (downwardHit.transform.tag == "BottomTag"))
        {
-           rd.AddForce(self.up * jumpForce);
-       }
-       
+            rd.velocity = new Vector3(rd.velocity.x, jumpForce, 0);
+        }
+       */
 
 
 

@@ -22,7 +22,7 @@ public class MoveBlock : MonoBehaviour
      {
         ThisBlock = this.transform;
         AIcharacter = GameObject.FindGameObjectWithTag("AI").transform;
-        Debug.Log("Startup");
+       
      }
        
     void Update()
@@ -35,7 +35,7 @@ public class MoveBlock : MonoBehaviour
         {
             newY = Random.Range(0, 6);
             ThisBlock.transform.position = new Vector3(posX + 50, newY, 0);
-            Debug.Log(distanceFromCharacter);               
+
         }
     }
 }

@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3704334637077463595}
   - component: {fileID: 3704334637077463599}
   - component: {fileID: 6488543860521374900}
-  m_Layer: 0
+  - component: {fileID: 7671994429539985780}
+  m_Layer: 9
   m_Name: Block
   m_TagString: BlockTag
   m_Icon: {fileID: 0}
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3704334637077463594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.22, y: -2.33, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -87,8 +88,8 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3704334637077463594}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_Material: {fileID: 13400000, guid: d878f254df83c7f4f9b94c05b017ef5a, type: 2}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -125,3 +126,16 @@ MonoBehaviour:
   AIcharacter: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810,
     type: 3}
   maxDistance: 40.5
+--- !u!114 &7671994429539985780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3704334637077463594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1eef43f9ea3590458d46550231e1c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementRate: 1
