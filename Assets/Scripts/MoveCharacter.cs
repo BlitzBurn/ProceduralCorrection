@@ -32,11 +32,11 @@ public class MoveCharacter : MonoBehaviour
 
     void Update()
     {
-        //characterPosition.x =transform.position.x +movementSpeed;
+        characterPosition.x =transform.position.x +movementSpeed;
 
-        rd.AddForce(self.right* movementSpeed);
+       // rd.AddForce(self.right* movementSpeed);
 
-        //transform.position = characterPosition;
+        transform.position = characterPosition;
   
        
         

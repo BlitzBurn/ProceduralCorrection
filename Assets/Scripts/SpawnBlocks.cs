@@ -20,7 +20,7 @@ public class SpawnBlocks : MonoBehaviour
         {
             float startY = Random.Range(0,3);
 
-            Instantiate(ThisBlock, new Vector3(i, startY, 0), Quaternion.identity);
+            Instantiate(ThisBlock, new Vector3(i+2, startY, 0), Quaternion.identity);
         }
     }
 

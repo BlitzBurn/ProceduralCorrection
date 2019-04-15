@@ -281,7 +281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &200009053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -372,7 +372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &457059423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -554,7 +554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1147747510
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -651,14 +651,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976511465}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac185b424d97b354bb55b968895d043d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ThisBlock: {fileID: 3704334637077463598, guid: ff59c9807fe95824780f9089063baead,
     type: 3}
-  numberOfBlocks: 42
+  numberOfBlocks: 50
 --- !u!4 &1976511467
 Transform:
   m_ObjectHideFlags: 0
@@ -680,20 +680,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5067207107320404197, guid: 0059645ff4237804180e11d333634810,
-        type: 3}
-      propertyPath: m_Name
-      value: DudeGuy
-      objectReference: {fileID: 0}
     - target: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.22
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810,
         type: 3}
@@ -740,15 +735,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5067207106338201505, guid: 0059645ff4237804180e11d333634810,
+    - target: {fileID: 5067207107320404197, guid: 0059645ff4237804180e11d333634810,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Name
+      value: DudeGuy
       objectReference: {fileID: 0}
-    - target: {fileID: 5067207106338201505, guid: 0059645ff4237804180e11d333634810,
+    - target: {fileID: 5067207107320404203, guid: 0059645ff4237804180e11d333634810,
         type: 3}
-      propertyPath: numberOfBlocks
-      value: 100
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5067207107320404202, guid: 0059645ff4237804180e11d333634810,
         type: 3}
@@ -779,12 +774,17 @@ PrefabInstance:
     - target: {fileID: 5067207107320404207, guid: 0059645ff4237804180e11d333634810,
         type: 3}
       propertyPath: movementSpeed
-      value: 15
+      value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 5067207107320404203, guid: 0059645ff4237804180e11d333634810,
+    - target: {fileID: 5067207106338201505, guid: 0059645ff4237804180e11d333634810,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067207106338201505, guid: 0059645ff4237804180e11d333634810,
+        type: 3}
+      propertyPath: numberOfBlocks
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0059645ff4237804180e11d333634810, type: 3}
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f72cc2b4f1acf48b6543a681192a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RaycastLengthDown: 5
+  RaycastLengthDown: 2.19
   RaycastLengthForward: 2.09
   jumpForce: 50
   self: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810, type: 3}

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3704334637077463594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.22, y: -2.33, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -121,9 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f52bdd241980554496a83a6958f518f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DaBlock: {fileID: 0}
-  DudeGuy: {fileID: 0}
   ThisBlock: {fileID: 3704334637077463598}
   AIcharacter: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810,
     type: 3}
-  maxDistance: -22
+  maxDistance: 40.5
