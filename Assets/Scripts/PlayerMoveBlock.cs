@@ -6,53 +6,64 @@ public class PlayerMoveBlock : MonoBehaviour
 {
     public float movementRate;
     private Vector3 blockPosition;
+    private Vector3 movmentDirection;
+    RaycastHit blockDetected;
+    private float raylenght = 0.4f;
 
-    
 
     void Start()
     {
-       blockPosition = transform.position;
-       // spawnedBlock = Instantiate(PlayerMoveBlockSpawned) as GameObject;
+        blockPosition = transform.position;
+        // spawnedBlock = Instantiate(PlayerMoveBlockSpawned) as GameObject;
     }
 
 
     //SendMessegeRaycast : CursorSphere
     public void BlockRaycastMoveUp()
     {
-        blockPosition = transform.position;
-        blockPosition.y = transform.position.y + movementRate;
-        
-        transform.position = blockPosition;
+        movmentDirection = new Vector3(0, 1, 0);
+
+        StartCoroutine("moveBlockAndCheckIfpossible", movmentDirection);
     }
 
     public void BlockRaycastMoveDown()
     {
-        blockPosition = transform.position;
-        blockPosition.y = transform.position.y - movementRate;
+        movmentDirection = new Vector3(0, -1, 0);
 
-        transform.position = blockPosition;
+        StartCoroutine("moveBlockAndCheckIfpossible", movmentDirection);
     }
 
     public void BlockRaycastMoveRight()
     {
-        blockPosition = transform.position;
-        blockPosition.x = transform.position.x + movementRate;
+        movmentDirection = new Vector3(1, 0, 0);
 
-        transform.position = blockPosition;
+        StartCoroutine("moveBlockAndCheckIfpossible", movmentDirection);
     }
 
     public void BlockRaycastMoveLeft()
-    {
-        blockPosition = transform.position;
-        blockPosition.x = transform.position.x - movementRate;
+    {     
+        movmentDirection = new Vector3(-1, 0, 0);
 
-        transform.position = blockPosition;
+        StartCoroutine("moveBlockAndCheckIfpossible", movmentDirection);
+    }
+
+
+    IEnumerator moveBlockAndCheckIfpossible(Vector3 movementDirection)
+    {
+        if(Physics.Raycast(transform.position, transform.TransformDirection(movementDirection), out blockDetected, raylenght) && blockDetected.transform.tag=="BlockTag")
+        {
+            Debug.Log("Nej");
+            return null;
+        }
+        else
+        {
+            transform.position = transform.position + movementDirection;
+
+            return null;
+        }
+       
     }
 
 
 
-    void Update()
-    {
-        
-    }
 }

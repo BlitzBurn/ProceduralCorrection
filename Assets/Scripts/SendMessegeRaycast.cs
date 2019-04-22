@@ -12,40 +12,37 @@ public class SendMessegeRaycast : MonoBehaviour
         
     }
 
-   
-    void Update()
-    {
-        Vector3 inward = transform.TransformDirection(Vector3.forward) *100;
-        Debug.DrawRay(transform.position, inward, Color.red);
+  
 
-        if (Input.GetKey(KeyCode.UpArrow))            
+    void FixedUpdate()
+    {
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out blockHit, 100))
         {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out blockHit, 100))
-            {                
-                blockHit.transform.SendMessage("BlockRaycastMoveUp", SendMessageOptions.DontRequireReceiver);                
-            }            
+            blockHit.transform.SendMessage("changeColorOfMarkedBlock", SendMessageOptions.DontRequireReceiver);          
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out blockHit, 100))
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out blockHit, 100)){
+
+            Debug.DrawRay(transform.position, transform.forward, Color.blue);            
+
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                    blockHit.transform.SendMessage("BlockRaycastMoveUp", SendMessageOptions.DontRequireReceiver);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
                 blockHit.transform.SendMessage("BlockRaycastMoveDown", SendMessageOptions.DontRequireReceiver);
             }
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out blockHit, 100))
+            else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
                 blockHit.transform.SendMessage("BlockRaycastMoveRight", SendMessageOptions.DontRequireReceiver);
             }
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out blockHit, 100))
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
                 blockHit.transform.SendMessage("BlockRaycastMoveLeft", SendMessageOptions.DontRequireReceiver);
             }
-        }
 
+
+        }
     }
 }

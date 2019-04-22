@@ -20,7 +20,7 @@ public class FollowMouse : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         positionOfCursor.x = Input.mousePosition.x;
         positionOfCursor.y = Input.mousePosition.y;

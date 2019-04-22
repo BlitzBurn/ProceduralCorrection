@@ -19,9 +19,9 @@ public class JumpScript : MonoBehaviour
 
     public Transform self;
 
-    public float airTimer;
-    private float time;
-    private bool airControl;
+   
+
+   
 
     private bool groundContact;
     public LayerMask groundLayer;
@@ -67,19 +67,6 @@ public class JumpScript : MonoBehaviour
 
 
 
-        if(time>=airTimer)
-        {
-            groundContact = true;
-        }
-        
-
-
-        if (airTimer<=time)
-        {
-            
-            groundContact = true;
-
-        }
 
     }
 }
