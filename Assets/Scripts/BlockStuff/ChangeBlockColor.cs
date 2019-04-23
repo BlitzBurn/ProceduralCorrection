@@ -19,7 +19,7 @@ public class ChangeBlockColor : MonoBehaviour
 
     void changeColorOfMarkedBlock()
     {
-        Debug.Log("funkar skiten");
+
         rend.sharedMaterial = blockMaterial[1];
         time = 0f;
     }
