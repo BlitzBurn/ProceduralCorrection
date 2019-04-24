@@ -14,7 +14,6 @@ public class PlayerMoveBlock : MonoBehaviour
     void Start()
     {
         blockPosition = transform.position;
-        // spawnedBlock = Instantiate(PlayerMoveBlockSpawned) as GameObject;
     }
 
 
