@@ -6,20 +6,20 @@ public class MoveCamera : MonoBehaviour
 {
     public GameObject DudeGuyRef;
 
-    private static float cameraMovementSpeed;
+    private float cameraPosX;
+    private Vector3 DudeGuyPosition;
 
     void Start()
     {
-        GameObject aiCharacter = GameObject.Find("DudeGuy");
-        MoveCharacter moveCharacter = aiCharacter.GetComponent<MoveCharacter>();
 
-        cameraMovementSpeed = moveCharacter.movementSpeed;
     }
 
    
     void Update()
     {
-        Debug.Log(cameraMovementSpeed);
-        transform.position = DudeGuyRef.transform.position + new Vector3(cameraMovementSpeed, transform.position.y, transform.position.z);
+        DudeGuyPosition = GameObject.Find("DudeGuy").transform.position;
+        cameraPosX = DudeGuyPosition.x;
+
+        transform.position = new Vector3(cameraPosX, 5, 0);
     }
 }

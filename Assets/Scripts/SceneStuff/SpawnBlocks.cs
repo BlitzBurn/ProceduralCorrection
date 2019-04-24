@@ -5,11 +5,15 @@ using UnityEngine;
 public class SpawnBlocks : MonoBehaviour
 {
 
-    public Transform ThisBlock;
+    public Transform MovableBlock;
+    public Transform UnMovableBlock;
     
 
     [Range(5, 100)]
     public int numberOfBlocks;
+
+    [Range(0, 100)]
+    public int unmovableBlockSpawnRate;
 
     void Start()
     {
@@ -20,7 +24,18 @@ public class SpawnBlocks : MonoBehaviour
         {
             float startY = Random.Range(0,3);
 
-            Instantiate(ThisBlock, new Vector3(i+2, startY, 0), Quaternion.identity);
+            int blockType = Random.Range(0, 100);
+
+            if (blockType >= unmovableBlockSpawnRate)
+            {
+                Instantiate(MovableBlock, new Vector3(i, startY, 0), Quaternion.identity);
+            }
+            else if(blockType<=unmovableBlockSpawnRate){
+                Instantiate(UnMovableBlock, new Vector3(i, startY, 0), Quaternion.identity);
+            }
+
+
+            
         }
     }
 
