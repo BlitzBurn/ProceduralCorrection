@@ -8,7 +8,12 @@ public class MainMeny : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("TestScene1", LoadSceneMode.Additive);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }

@@ -7,16 +7,25 @@ public class DeathScript : MonoBehaviour
 {
     private Text gameOver;
     public GameObject playerCharacter;
+    public GameObject cursor;
+    public GameObject DeathScreen;
 
     void Start()
     {
         
     }
 
-    
-    void Update()
+
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.tag == "AI")
+        {
+            Destroy(collision.gameObject);
+            Destroy(cursor);
+
+
+            DeathScreen.transform.gameObject.SetActive(true);
+        }
     }
 
     IEnumerator PlayerDeath()

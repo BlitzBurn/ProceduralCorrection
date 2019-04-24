@@ -7,7 +7,7 @@ public class FollowMouse : MonoBehaviour
    
     
 
-    [Range(-15f, 10f)]   
+    [Range(1, 10f)]   
     public float cursorLocationZ;
 
     Vector3 positionOfCursor;
@@ -24,12 +24,13 @@ public class FollowMouse : MonoBehaviour
     {
         positionOfCursor.x = Input.mousePosition.x;
         positionOfCursor.y = Input.mousePosition.y;
+        positionOfCursor.z = cursorLocationZ;
 
         Vector3 mouseLocation = Camera.main.ScreenToWorldPoint(positionOfCursor);
 
         transform.position = mouseLocation;
     }
-
+    /*
     public Vector3 CursorLocation(float cursorLocationX, float cursorLocationY, float cursorLocationZ)
     {
 
@@ -41,4 +42,5 @@ public class FollowMouse : MonoBehaviour
 
         return mousePosition;
     }
+    */
 }
