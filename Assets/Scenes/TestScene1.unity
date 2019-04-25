@@ -1603,7 +1603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9add929343dae442a93f83c670f5652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfLives: 0
+  numberOfLives: 1
   dedZone: {fileID: 0}
 --- !u!1001 &1731376828983781057
 PrefabInstance:
