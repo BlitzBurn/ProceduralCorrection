@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DeathScript : MonoBehaviour
-{
-    private Text gameOver;
+{  
     public GameObject playerCharacter;
     public GameObject cursor;
     public GameObject DeathScreen;
-    public MoveCharacter moveChar;
+    private MoveCharacter moveChar;
 
     void Start()
     {
