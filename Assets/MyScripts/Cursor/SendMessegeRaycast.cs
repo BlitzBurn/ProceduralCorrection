@@ -4,16 +4,8 @@ using UnityEngine;
 
 public class SendMessegeRaycast : MonoBehaviour
 {
-
     RaycastHit blockHit;
     
-    void Start()
-    {
-        
-    }
-
-  
-
     void FixedUpdate()
     {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out blockHit, 100))
@@ -27,7 +19,7 @@ public class SendMessegeRaycast : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
-                    blockHit.transform.SendMessage("BlockRaycastMoveUp", SendMessageOptions.DontRequireReceiver);
+                 blockHit.transform.SendMessage("BlockRaycastMoveUp", SendMessageOptions.DontRequireReceiver);
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
@@ -41,8 +33,7 @@ public class SendMessegeRaycast : MonoBehaviour
             {
                 blockHit.transform.SendMessage("BlockRaycastMoveLeft", SendMessageOptions.DontRequireReceiver);
             }
-
-
+            
         }
     }
 }

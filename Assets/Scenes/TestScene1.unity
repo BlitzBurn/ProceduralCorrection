@@ -577,6 +577,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5067207107320404197, guid: 0059645ff4237804180e11d333634810,
+        type: 3}
+      propertyPath: m_Name
+      value: DudeGuy
+      objectReference: {fileID: 0}
     - target: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -632,17 +637,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5067207107320404197, guid: 0059645ff4237804180e11d333634810,
-        type: 3}
-      propertyPath: m_Name
-      value: DudeGuy
-      objectReference: {fileID: 0}
     - target: {fileID: 5067207107320404203, guid: 0059645ff4237804180e11d333634810,
         type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: d878f254df83c7f4f9b94c05b017ef5a,
         type: 2}
+    - target: {fileID: 5067207107320404203, guid: 0059645ff4237804180e11d333634810,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5067207107320404202, guid: 0059645ff4237804180e11d333634810,
         type: 3}
       propertyPath: m_Drag
@@ -1339,6 +1344,7 @@ MonoBehaviour:
   playerCharacter: {fileID: 1379118567}
   cursor: {fileID: 251917204}
   DeathScreen: {fileID: 684155131}
+  moveChar: {fileID: 0}
 --- !u!4 &922272963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810,

@@ -9,10 +9,12 @@ public class DeathScript : MonoBehaviour
     public GameObject playerCharacter;
     public GameObject cursor;
     public GameObject DeathScreen;
+    public MoveCharacter moveChar;
 
     void Start()
     {
-        
+        playerCharacter = GameObject.FindGameObjectWithTag("AI");
+        moveChar = playerCharacter.GetComponent<MoveCharacter>();
     }
 
 
@@ -20,18 +22,13 @@ public class DeathScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "AI")
         {
-            Destroy(collision.gameObject);
+            // Destroy(collision.gameObject);
+            moveChar.canMove = false;
+
             Destroy(cursor);
 
 
             DeathScreen.transform.gameObject.SetActive(true);
         }
-    }
-
-    IEnumerator PlayerDeath()
-    {
-
-        Destroy(playerCharacter);
-        return null;
-    }
+    }        
 }
