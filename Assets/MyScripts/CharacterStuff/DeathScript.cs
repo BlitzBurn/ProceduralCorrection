@@ -21,13 +21,20 @@ public class DeathScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "AI")
         {
-            // Destroy(collision.gameObject);
-            moveChar.canMove = false;
-
-            Destroy(cursor);
-
-
-            DeathScreen.transform.gameObject.SetActive(true);
+            endGame();
         }
-    }        
+
+        
+    }
+
+    public void endGame()
+    {
+        // Destroy(collision.gameObject);
+        moveChar.canMove = false;
+
+        Destroy(cursor);
+
+
+        DeathScreen.transform.gameObject.SetActive(true);
+    }
 }

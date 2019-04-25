@@ -33,7 +33,7 @@ public class MoveCharacter : MonoBehaviour
         }
         else if (canMove == false)
         {
-            characterRigidBody.velocity = new Vector3(0, -1, 0);
+            characterRigidBody.velocity = new Vector3(-1, -1, 0);
         }
     }
 }
