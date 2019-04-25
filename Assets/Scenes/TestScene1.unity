@@ -1472,7 +1472,8 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2459428525725257372, guid: 0059645ff4237804180e11d333634810, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0059645ff4237804180e11d333634810, type: 3}
 --- !u!1 &1342164546
 GameObject:
@@ -1604,7 +1605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfLives: 1
-  dedZone: {fileID: 0}
+  deathScript: {fileID: 846861604}
 --- !u!1001 &1731376828983781057
 PrefabInstance:
   m_ObjectHideFlags: 0

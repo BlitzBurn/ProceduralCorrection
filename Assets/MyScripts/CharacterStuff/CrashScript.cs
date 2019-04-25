@@ -19,10 +19,7 @@ public class CrashScript : MonoBehaviour
         //knockback = new Vector3(transform.left*3);
     }
  
-    void Update()
-    {
-        
-    }
+    
 
     void OnCollisionEnter(Collision crash)    
     {
