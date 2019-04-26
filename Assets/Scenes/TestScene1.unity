@@ -1436,6 +1436,16 @@ PrefabInstance:
       propertyPath: RaycastLengthForward
       value: 1.47
       objectReference: {fileID: 0}
+    - target: {fileID: 5398813710237670979, guid: 0059645ff4237804180e11d333634810,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398813710237670979, guid: 0059645ff4237804180e11d333634810,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2214226036062570243, guid: 0059645ff4237804180e11d333634810,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1461,16 +1471,6 @@ PrefabInstance:
         type: 3}
       propertyPath: knockback
       value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5398813710237670979, guid: 0059645ff4237804180e11d333634810,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5398813710237670979, guid: 0059645ff4237804180e11d333634810,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2459428525725257372, guid: 0059645ff4237804180e11d333634810, type: 3}
@@ -1604,7 +1604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9add929343dae442a93f83c670f5652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfLives: 1
+  numberOfLives: 2
   deathScript: {fileID: 846861604}
 --- !u!1001 &1731376828983781057
 PrefabInstance:
