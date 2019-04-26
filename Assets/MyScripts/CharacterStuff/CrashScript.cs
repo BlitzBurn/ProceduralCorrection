@@ -6,6 +6,7 @@ public class CrashScript : MonoBehaviour
 {
     public GameObject playerCharacter;
     private MoveCharacter moveChar;
+    private Lives charLives;
     private Rigidbody rb;
     public float knockback;
 
@@ -13,10 +14,9 @@ public class CrashScript : MonoBehaviour
     {
         playerCharacter = GameObject.FindGameObjectWithTag("AI");
         moveChar = playerCharacter.GetComponent<MoveCharacter>();
+        charLives = playerCharacter.GetComponent<Lives>();
 
         rb = playerCharacter.GetComponent<Rigidbody>();
-
-        //knockback = new Vector3(transform.left*3);
     }
  
     
@@ -32,6 +32,7 @@ public class CrashScript : MonoBehaviour
 
     IEnumerator OnCrash()
     {
+        charLives.numberOfLives= charLives.numberOfLives - 1;
         moveChar.canMove = false;
         Debug.Log("knockback1");
         rb.AddForce(knockback, 0, 0, ForceMode.Impulse);        
