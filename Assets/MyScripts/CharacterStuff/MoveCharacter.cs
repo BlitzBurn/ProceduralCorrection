@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveCharacter : MonoBehaviour
 {
-    [Range (0.1f, 6f)]
+    [Range (1f, 4f)]
     public float movementSpeed;   
 
     private Vector3 characterPosition;
@@ -28,7 +28,7 @@ public class MoveCharacter : MonoBehaviour
 
     void Update()
     {
-        if (canMove == true) {
+        if (canMove == true) {          
             characterRigidBody.velocity = new Vector3(movementSpeed, characterRigidBody.velocity.y, 0);
         }
         else if (canMove == false)

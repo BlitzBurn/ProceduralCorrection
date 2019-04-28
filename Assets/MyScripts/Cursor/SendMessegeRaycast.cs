@@ -13,13 +13,19 @@ public class SendMessegeRaycast : MonoBehaviour
             blockHit.transform.SendMessage("changeColorOfMarkedBlock", SendMessageOptions.DontRequireReceiver);          
         }
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out blockHit, 100)){
+        
+    }
 
-            Debug.DrawRay(transform.position, transform.forward, Color.blue);            
+    void Update()
+    {
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out blockHit, 100))
+        {
+
+            Debug.DrawRay(transform.position, transform.forward, Color.blue);
 
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
-                 blockHit.transform.SendMessage("BlockRaycastMoveUp", SendMessageOptions.DontRequireReceiver);
+                blockHit.transform.SendMessage("BlockRaycastMoveUp", SendMessageOptions.DontRequireReceiver);
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
@@ -33,7 +39,9 @@ public class SendMessegeRaycast : MonoBehaviour
             {
                 blockHit.transform.SendMessage("BlockRaycastMoveLeft", SendMessageOptions.DontRequireReceiver);
             }
-            
+
         }
     }
+
+
 }

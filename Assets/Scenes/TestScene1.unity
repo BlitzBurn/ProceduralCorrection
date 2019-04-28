@@ -1332,7 +1332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147747509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.603, y: 1.19, z: 0}
+  m_LocalPosition: {x: -10.603, y: 1, z: 0}
   m_LocalScale: {x: 19.419106, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1420,6 +1420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AngularDrag
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067207107320404207, guid: 0059645ff4237804180e11d333634810,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 6694899259938094041, guid: 0059645ff4237804180e11d333634810,
         type: 3}

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6727585189397779903}
   - component: {fileID: 3248413631171711737}
   - component: {fileID: 3285203698119986555}
-  - component: {fileID: 1825913803882687015}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -78,20 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &1825913803882687015
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123682208412700520}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &3614320781583261223
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +88,6 @@ GameObject:
   - component: {fileID: 233266199775121175}
   - component: {fileID: 1783683928989542924}
   - component: {fileID: 2627303164399777504}
-  - component: {fileID: 5244784124355431040}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -170,20 +154,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &5244784124355431040
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614320781583261223}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &5067207107320404197
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +170,7 @@ GameObject:
   - component: {fileID: 5067207107320404207}
   - component: {fileID: 6694899259938094041}
   - component: {fileID: 2459428525725257372}
+  - component: {fileID: 3550877462501542579}
   m_Layer: 0
   m_Name: DudeGuy
   m_TagString: AI
@@ -277,10 +248,10 @@ BoxCollider:
   m_GameObject: {fileID: 5067207107320404197}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.0000014, y: 0.8633313, z: 1}
-  m_Center: {x: 0.00000059604645, y: 0.06833434, z: 0}
+  m_Size: {x: 1.0000014, y: 1.0247574, z: 1}
+  m_Center: {x: 0.00000059604645, y: -0.012378693, z: 0}
 --- !u!54 &5067207107320404202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -344,7 +315,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfLives: 0
-  dedZone: {fileID: 0}
+  deathScript: {fileID: 0}
+--- !u!136 &3550877462501542579
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067207107320404197}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5053714
+  m_Height: 1.752922
+  m_Direction: 1
+  m_Center: {x: -0.03456247, y: 0.36595345, z: 0.0068024993}
 --- !u!1 &6117076282304386675
 GameObject:
   m_ObjectHideFlags: 0
