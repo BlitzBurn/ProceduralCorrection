@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CrashScript : MonoBehaviour
 {
+    public LivesUIDisplay uiLives;
+
+
     public GameObject playerCharacter;
     private MoveCharacter moveChar;
     private Lives charLives;
@@ -13,9 +16,9 @@ public class CrashScript : MonoBehaviour
     void Start()
     {
         playerCharacter = GameObject.FindGameObjectWithTag("AI");
-        moveChar = playerCharacter.GetComponent<MoveCharacter>();
-        charLives = playerCharacter.GetComponent<Lives>();
+        moveChar = playerCharacter.GetComponent<MoveCharacter>();        
 
+        charLives = playerCharacter.GetComponent<Lives>();
         rb = playerCharacter.GetComponent<Rigidbody>();
     }
  
@@ -32,9 +35,13 @@ public class CrashScript : MonoBehaviour
 
     IEnumerator OnCrash()
     {
-        charLives.numberOfLives= charLives.numberOfLives - 1;
+        //charLives.numberOfLives= charLives.numberOfLives - 1;
+
+        Lives.numberOfLives = Lives.numberOfLives- 1;
+
         moveChar.canMove = false;
-        Debug.Log("knockback1");
+        //Debug.Log("knockback1");
+        uiLives.UpdateLives();
         rb.AddForce(knockback, 0, 0, ForceMode.Impulse);        
         
         yield return new WaitForSeconds(1);

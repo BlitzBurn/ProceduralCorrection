@@ -4,43 +4,39 @@ using UnityEngine;
 
 public class Lives : MonoBehaviour
 {
-    public int numberOfLives;
-    // public GameObject dedZone;
+    public static int numberOfLives;
+    private static int difficulty;
     public DeathScript deathScript;
 
-    void Start()
-    {/*
-        GameObject dedZone = GameObject.Find("");
-        DeathScript EndGame = (DeathScript) dedZone.GetComponent<DeathScript>();
-        ^*/
-    }
-
+   
     public void EasyMode()
     {
         numberOfLives = 3;
-        Debug.Log(numberOfLives);
+        difficulty = 1;
+      
     }
 
     public void NormalMode()
     {
         numberOfLives = 2;
-        Debug.Log(numberOfLives);
+        difficulty = 2;
+        
     }
 
     public void HardMode()
     {
         numberOfLives = 1;
-        Debug.Log(numberOfLives);
+        difficulty = 3;
+        
     }
 
 
     void Update()
     {
-        
+      //  Debug.Log(numberOfLives);
 
         if (numberOfLives == 0)
-        {
-            // EndGame.endGame();
+        {           
             deathScript.endGame();
         }
 
