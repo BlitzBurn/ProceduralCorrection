@@ -19,9 +19,10 @@ public class JumpScript : MonoBehaviour
 
     public Transform self;
 
-   
+    public float landingSpot;
+    public float jumpHeight;
 
-   
+    public bool TypeOfJump;
 
     private bool groundContact;
     public LayerMask groundLayer;
@@ -31,19 +32,26 @@ public class JumpScript : MonoBehaviour
     {
         rd = GetComponent<Rigidbody>();
         charCollider = GetComponent<BoxCollider>();
-    }
-
-  
+    } 
 
     void Update()
-    {      
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out downwardHit, RaycastLengthDown))
+    {
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out downwardHit, RaycastLengthDown))
         {
             groundContact = true;
         }
         else
         {
-            groundContact=false;
+            groundContact = false;
+        }
+
+        if (TypeOfJump == true)
+        {
+            JumpStandard();
+        }
+        else if (TypeOfJump == false)
+        {
+            JumpControlled();
         }
 
         Vector3 right = transform.TransformDirection(Vector3.right) * RaycastLengthForward;
@@ -51,22 +59,22 @@ public class JumpScript : MonoBehaviour
 
         Vector3 down = transform.InverseTransformDirection(Vector3.down) * RaycastLengthDown;
         Debug.DrawRay(transform.position, down, Color.red);
+    }
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out forwardHit, RaycastLengthForward) && groundContact == true )
+    private void JumpControlled()
+    {
+
+    }
+
+
+    private void JumpStandard()
+    {  
+     
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out forwardHit, RaycastLengthForward) && groundContact == true)
         {
             rd.velocity = new Vector3(rd.velocity.x, jumpForce, 0);
 
         }
-/*
-       if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out downwardHit, RaycastLengthDown) && (downwardHit.transform.tag == "BottomTag"))
-       {
-            rd.velocity = new Vector3(rd.velocity.x, jumpForce, 0);
-        }
-       */
-
-
-
-
-
     }
 }
