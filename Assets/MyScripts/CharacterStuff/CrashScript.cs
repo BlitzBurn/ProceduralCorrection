@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CrashScript : MonoBehaviour
 {
-    public LivesUIDisplay uiLives;
+    public UIDisplay uiLives;
 
 
     public GameObject playerCharacter;
@@ -42,12 +42,19 @@ public class CrashScript : MonoBehaviour
         moveChar.canMove = false;
         //Debug.Log("knockback1");
         uiLives.UpdateLives();
-        rb.AddForce(knockback, 0, 0, ForceMode.Impulse);        
-        
-        yield return new WaitForSeconds(1);
+       
 
-        moveChar.canMove = true;
+        if (Lives.numberOfLives!=0) {
+            rb.AddForce(knockback, 0, 0, ForceMode.Impulse);
 
+            yield return new WaitForSeconds(1);
+            moveChar.canMove = true;            
+        }
+        else if (Lives.numberOfLives == 0)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
         //return null;
     }
 }

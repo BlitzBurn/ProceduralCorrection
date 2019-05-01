@@ -13,16 +13,12 @@ public class JumpScript : MonoBehaviour
     RaycastHit forwardHit;
     RaycastHit downwardHit;
 
+    [Range (1f, 8f)]
     public float jumpForce;
 
     private Rigidbody rd;
 
     public Transform self;
-
-    public float landingSpot;
-    public float jumpHeight;
-
-    public bool TypeOfJump;
 
     private bool groundContact;
     public LayerMask groundLayer;
@@ -45,14 +41,7 @@ public class JumpScript : MonoBehaviour
             groundContact = false;
         }
 
-        if (TypeOfJump == true)
-        {
-            JumpStandard();
-        }
-        else if (TypeOfJump == false)
-        {
-            JumpControlled();
-        }
+        JumpStandard();
 
         Vector3 right = transform.TransformDirection(Vector3.right) * RaycastLengthForward;
         Debug.DrawRay(transform.position, right, Color.red);

@@ -5,28 +5,36 @@ using UnityEngine;
 public class Lives : MonoBehaviour
 {
     public static int numberOfLives;
-    private static int difficulty;
+    private static int maxLives;
     public DeathScript deathScript;
+    public bool testMode;
 
-   
+    private void Awake()
+    {
+        if (testMode == true)
+        {
+            numberOfLives = 3;
+        }
+    }
+
     public void EasyMode()
     {
         numberOfLives = 3;
-        difficulty = 1;
+        maxLives = 1;
       
     }
 
     public void NormalMode()
     {
         numberOfLives = 2;
-        difficulty = 2;
+        maxLives = 2;
         
     }
 
     public void HardMode()
     {
         numberOfLives = 1;
-        difficulty = 3;
+        maxLives = 3;
         
     }
 
@@ -38,6 +46,7 @@ public class Lives : MonoBehaviour
         if (numberOfLives == 0)
         {           
             deathScript.endGame();
+            numberOfLives = maxLives;
         }
 
     }
