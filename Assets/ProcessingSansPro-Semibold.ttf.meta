@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: e96bfb99f5990484e90b76428d3fa2ac
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Processing Sans Pro
+  fontNames:
+  - Processing Sans Pro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 72dc1a0903daf3049a9e52f36faf501c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
