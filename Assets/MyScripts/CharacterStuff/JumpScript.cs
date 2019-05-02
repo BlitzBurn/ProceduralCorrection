@@ -44,10 +44,10 @@ public class JumpScript : MonoBehaviour
         JumpStandard();
 
         Vector3 right = transform.TransformDirection(Vector3.right) * RaycastLengthForward;
-        Debug.DrawRay(transform.position, right, Color.red);
+       // Debug.DrawRay(transform.position, right, Color.red);
 
         Vector3 down = transform.InverseTransformDirection(Vector3.down) * RaycastLengthDown;
-        Debug.DrawRay(transform.position, down, Color.red);
+      //  Debug.DrawRay(transform.position, down, Color.red);
     }
 
     private void JumpControlled()
