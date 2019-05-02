@@ -7,6 +7,8 @@ TagManager:
   - AI
   - BlockTag
   - BottomTag
+  - BrokenHat
+  - NotBrokenHat
   layers:
   - Default
   - TransparentFX
