@@ -6,6 +6,7 @@ public class CrashScript : MonoBehaviour
 {
     public UIDisplay uiLives;
 
+    public SFXplayer sfxplayer;
 
     public GameObject playerCharacter;
     private MoveCharacter moveChar;
@@ -35,12 +36,11 @@ public class CrashScript : MonoBehaviour
 
     IEnumerator OnCrash()
     {
-        //charLives.numberOfLives= charLives.numberOfLives - 1;
+       Lives.numberOfLives = Lives.numberOfLives- 1;
 
-        Lives.numberOfLives = Lives.numberOfLives- 1;
+        sfxplayer.PlayCrashSound();
 
-        moveChar.canMove = false;
-        //Debug.Log("knockback1");
+        moveChar.canMove = false;        
         uiLives.UpdateLives();
        
 

@@ -35,7 +35,7 @@ public class MoveBlock : MonoBehaviour
         {
             newY = Random.Range(0, 4);
 
-            ThisBlock.transform.position = new Vector3(posX + 50, newY, 0);
+            ThisBlock.transform.position = new Vector3(posX + 70, newY, 0);
 
         }
     }

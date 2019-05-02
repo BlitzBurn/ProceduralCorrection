@@ -7,6 +7,7 @@ public class Lives : MonoBehaviour
     public static int numberOfLives;
     private static int maxLives;
     public DeathScript deathScript;
+    
     public bool testMode;
 
     private void Awake()

@@ -14,6 +14,8 @@ public class DeathScript : MonoBehaviour
 
     private MoveCharacter moveChar;
 
+    public SFXplayer sfxplayer;
+
     void Start()
     {
         playerCharacter = GameObject.FindGameObjectWithTag("AI");
@@ -34,6 +36,8 @@ public class DeathScript : MonoBehaviour
     public void endGame()
     {
         // Destroy(collision.gameObject);
+        sfxplayer.PlayGameOverSound();
+
         moveChar.canMove = false;
 
         Destroy(cursor);
