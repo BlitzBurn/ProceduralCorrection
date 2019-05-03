@@ -9,6 +9,8 @@ public class SceneReload : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+
     }
 
     public void MainMenuReturn()

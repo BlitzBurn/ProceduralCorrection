@@ -37,6 +37,7 @@ public class CrashScript : MonoBehaviour
     IEnumerator OnCrash()
     {
        Lives.numberOfLives = Lives.numberOfLives- 1;
+        Debug.Log(Lives.numberOfLives);
 
         sfxplayer.PlayCrashSound();
 

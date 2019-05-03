@@ -39,7 +39,7 @@ public class DeathScript : MonoBehaviour
         sfxplayer.PlayGameOverSound();
 
         moveChar.canMove = false;
-
+        Debug.Log("Deathscript");
         Destroy(cursor);
 
         hat.transform.gameObject.SetActive(false);

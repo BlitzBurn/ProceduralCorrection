@@ -8,20 +8,25 @@ public class Lives : MonoBehaviour
     private static int maxLives;
     public DeathScript deathScript;
     
-    public bool testMode;
+    private bool testMode=false;
+    public static bool difficultySet;
 
     private void Awake()
     {
+        difficultySet = false;
         if (testMode == true)
         {
             numberOfLives = 3;
         }
+
+        NormalMode();
     }
 
     public void EasyMode()
     {
         numberOfLives = 3;
-        maxLives = 1;
+        maxLives = 3;
+        difficultySet = true;
       
     }
 
@@ -29,25 +34,44 @@ public class Lives : MonoBehaviour
     {
         numberOfLives = 2;
         maxLives = 2;
-        
+        difficultySet = true;
     }
 
     public void HardMode()
     {
         numberOfLives = 1;
-        maxLives = 3;
-        
+        maxLives = 1;
+        difficultySet = true;
     }
 
+    public void restart()
+    {
+        if (maxLives == 1)
+        {
+            EasyMode();
+        }
+        else if (maxLives == 2)
+        {
+            NormalMode();
+        }
+        else if (maxLives == 3)
+        {
+            HardMode();
+        }
+    }
 
     void Update()
-    {
-      //  Debug.Log(numberOfLives);
-
-        if (numberOfLives == 0)
-        {           
+    {/*
+        if (difficultySet == false)
+        {
+            numberOfLives = 2;
+        }
+        */
+        if (numberOfLives <= 0)
+        {
+            
             deathScript.endGame();
-            numberOfLives = maxLives;
+            
         }
 
     }
