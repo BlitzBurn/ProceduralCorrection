@@ -33,10 +33,18 @@ public class MoveBlock : MonoBehaviour
         
         if (distanceFromCharacter >= maxDistance && ThisBlock.transform.position.x <= AIcharacter.transform.position.x)
         {
-            newY = Random.Range(0, 4);
+            randomLocation();
 
-            ThisBlock.transform.position = new Vector3(posX + 70, newY, 0);
+
 
         }
     }
+
+    void randomLocation()
+    {
+        newY = Random.Range(0, 4);
+        ThisBlock.transform.position = new Vector3(posX + 70, newY, 0);
+    }
+
+   
 }

@@ -157,7 +157,7 @@ MonoBehaviour:
   ThisBlock: {fileID: 3704334637077463598}
   AIcharacter: {fileID: 5067207107320404206, guid: 0059645ff4237804180e11d333634810,
     type: 3}
-  maxDistance: 40.5
+  maxDistance: 20
 --- !u!114 &7671994429539985780
 MonoBehaviour:
   m_ObjectHideFlags: 0

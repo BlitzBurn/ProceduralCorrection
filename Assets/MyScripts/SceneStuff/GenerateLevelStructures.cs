@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpScriptVersion2 : MonoBehaviour
+public class GenerateLevelStructures : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private int[] slopeYcoordinates; 
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+
+    void generateSlopeHole()
+    {
+
+    }
+
 }

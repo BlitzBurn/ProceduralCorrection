@@ -27,10 +27,15 @@ public class JumpScript : MonoBehaviour
     public LayerMask groundLayer;
     private Collider charCollider;
 
+    private MoveCharacter moveChar;
+
     void Start()
     {
         rd = GetComponent<Rigidbody>();
         charCollider = GetComponent<BoxCollider>();
+
+        GameObject playerCharacter = GameObject.FindGameObjectWithTag("AI");
+        moveChar = playerCharacter.GetComponent<MoveCharacter>();
     } 
 
     void Update()
@@ -58,7 +63,7 @@ public class JumpScript : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out downwardHit, RaycastLengthDown) && groundContact == false)
         {
-            sfxplayer.PlayJumpSound();
+            sfxplayer.PlayLandingSound();
         }
     }
 
@@ -70,7 +75,12 @@ public class JumpScript : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out forwardHit, RaycastLengthForward) && groundContact == true)
         {
-            sfxplayer.PlayJumpSound();
+            if (moveChar.canMove == true)
+            {
+                sfxplayer.PlayJumpSound();
+            }
+
+
             rd.velocity = new Vector3(rd.velocity.x, jumpForce, 0);
 
         }
